@@ -16,13 +16,13 @@ public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "commentId")
-    private long commentId;
+    private Long commentId;
 
     @Column(name = "createdAt")
     private Date createdAt;
 
     @Column(name = "parentId")
-    private long parentId;
+    private Long parentId;
 
     @Column(name = "upvote")
     private int upvote;

@@ -1,8 +1,8 @@
 package com.musicnetwork.Controllers;
 
-import com.musicnetwork.DTOs.UserDTO;
-import com.musicnetwork.Entities.Account;
-import com.musicnetwork.Interfaces.UserInterface;
+import com.musicnetwork.DTOs.SongDTO;
+import com.musicnetwork.Entities.Song;
+import com.musicnetwork.Interfaces.SongInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,16 +12,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/user")
-public class UserController {
+@RequestMapping("/song")
+public class SongController {
     @Autowired
-    UserInterface userInterface;
+    SongInterface songInterface;
 
     @PostMapping
-    public ResponseEntity<Account> addUser(@RequestBody UserDTO userDTO) {
-        return new ResponseEntity<Account>(userInterface.addUser(userDTO), HttpStatus.CREATED);
+    public ResponseEntity<Song> add(@RequestBody SongDTO songDTO) {
+        return new ResponseEntity<Song>(songInterface.addSong(songDTO), HttpStatus.CREATED);
     }
-
-    // Get all user --> Get method, service
-
 }

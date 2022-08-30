@@ -17,7 +17,7 @@ public class Song {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "songId")
-    private long songId;
+    private Long songId;
 
     @Column(name = "songName")
     private String songName;
@@ -42,4 +42,7 @@ public class Song {
 
     @OneToMany(mappedBy = "song")
     private List<SongComment> comments;
+
+    @Column(name = "songData")
+    private byte[] songData;
 }
