@@ -5,4 +5,5 @@ import com.musicnetwork.Entities.Song;
 
 public interface SongInterface {
     Song addSong(SongDTO songDTO);
+
 }
