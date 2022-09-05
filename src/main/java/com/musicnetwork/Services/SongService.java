@@ -7,9 +7,11 @@ import com.musicnetwork.Enum.Role;
 import com.musicnetwork.Interfaces.SongInterface;
 import com.musicnetwork.Repositories.SongRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 
+@Service
 public class SongService implements SongInterface {
     @Autowired
     SongRepository songRepository;
