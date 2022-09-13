@@ -4,6 +4,7 @@ import java.util.Date;
 
 //Insert some method here
 public class SongDTO {
+    private Long songId;
     private String songName;
     private String composer;
     private String singer;
@@ -11,9 +12,13 @@ public class SongDTO {
     private Date uploadedAt;
     public SongDTO(){}
 
-    public String getSongname(){return songName;}
+    public void setSongId(Long songId){this.songId = songId;}
 
-    public void setSongname(String songName){this.songName = songName;}
+    public Long getSongId(){return songId;}
+
+    public String getSongName(){return songName;}
+
+    public void setSongName(String songName){this.songName = songName;}
 
     public String getComposer(){return composer;}
 
@@ -27,5 +32,7 @@ public class SongDTO {
 
     public void setCategory(String category){this.category = category;}
 
+    public void setUploadedAt(Date uploadedAt){this.uploadedAt = uploadedAt;}
     public Date getUploadedAt(){return uploadedAt;}
+
 }

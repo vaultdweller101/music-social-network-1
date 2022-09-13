@@ -16,7 +16,7 @@ public class SongComment {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "Id")
-    private long Id;
+    private Long Id;
 
     @ManyToOne
     @JoinColumn(name = "songId")

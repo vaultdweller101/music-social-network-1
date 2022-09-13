@@ -2,8 +2,6 @@ package com.musicnetwork.Services;
 
 import com.musicnetwork.DTOs.SongDTO;
 import com.musicnetwork.Entities.Song;
-import com.musicnetwork.Entities.SongComment;
-import com.musicnetwork.Enum.Role;
 import com.musicnetwork.Interfaces.SongInterface;
 import com.musicnetwork.Repositories.SongRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +17,13 @@ public class SongService implements SongInterface {
     @Override
     public Song addSong(SongDTO songDTO) {
         Song song = new Song();
-        song.setSongName(song.getSongName());
+        song.setSongName(songDTO.getSongName());
+        song.setSongId(songDTO.getSongId());
+        song.setComposer(songDTO.getComposer());
+        song.setSinger(songDTO.getSinger());
+        song.setCategory(songDTO.getCategory());
+        song.setUploadedAt(songDTO.getUploadedAt());
+        //song.setUploadedBy();
         return songRepository.save(song);
     }
 }
