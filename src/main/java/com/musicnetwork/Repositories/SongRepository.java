@@ -10,4 +10,8 @@ import org.springframework.stereotype.Repository;
 public interface SongRepository extends JpaRepository<Song, Long> {
     @Query(value = "select * from song repo where id = :id", nativeQuery = true)
     Song getSongByID(@Param("id") Long id);
+
+    @Query(value = "select * from song repo where songName like '%[songName]%'",
+            nativeQuery = true)
+    Song getSongByName(@Param("songName") String songName);
 }

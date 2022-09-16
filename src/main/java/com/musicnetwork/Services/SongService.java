@@ -23,7 +23,6 @@ public class SongService implements SongInterface {
         song.setSinger(songDTO.getSinger());
         song.setCategory(songDTO.getCategory());
         song.setUploadedAt(songDTO.getUploadedAt());
-        //song.setUploadedBy();
         return songRepository.save(song);
     }
 }
